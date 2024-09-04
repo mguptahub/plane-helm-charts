@@ -95,13 +95,14 @@ jobs:
           echo "MARK_AS_LATEST=false" >> $GITHUB_ENV
 
       - name: Release Charts
-        uses: helm/chart-releaser-action@v1.6.0
+        uses: mguptahub/chart-releaser-action@v1.6.2-dev
         with:
           charts_dir: charts
           config: cr.yaml
           packages_with_index: false
           skip_existing: true
           mark_as_latest: ${{ env.MARK_AS_LATEST }}
+          prerelease: true
         env:
           CR_TOKEN: ${{ env.CR_TOKEN }}
           CR_KEY: ${{ env.GPG_KEY_NAME }}
