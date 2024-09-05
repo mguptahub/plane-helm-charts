@@ -104,7 +104,7 @@ jobs:
           packages_with_index: false
           skip_existing: true
           mark_as_latest: ${{ env.MARK_AS_LATEST }}
-          prerelease: ${{ env.MARK_AS_PRERELASE }}
+          prerelease: false
         env:
           CR_TOKEN: ${{ env.CR_TOKEN }}
           CR_KEY: ${{ env.GPG_KEY_NAME }}
