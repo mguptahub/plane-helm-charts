@@ -97,7 +97,7 @@ jobs:
           echo "MARK_AS_PRERELASE=true" >> $GITHUB_ENV
 
       - name: Release Charts
-        uses: mguptahub/chart-releaser-action@v1.6.2-dev
+        uses: mguptahub/chart-releaser-action@master
         with:
           charts_dir: charts
           config: cr.yaml
