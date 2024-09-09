@@ -25,7 +25,7 @@ env:
   CHART_NAME_ENTERPRISE: "plane-enterprise"
   MARK_AS_LATEST: true
   MARK_AS_PRERELASE: false
-  PAGE_INDEX_PATH: ""
+  PAGES_INDEX_PATH: ""
 
 jobs:
   setup:
@@ -96,7 +96,8 @@ jobs:
 
           echo "MARK_AS_LATEST=false" >> $GITHUB_ENV
           echo "MARK_AS_PRERELASE=true" >> $GITHUB_ENV
-          echo "PAGE_INDEX_PATH=${flatBranchName}" >> $GITHUB_ENV
+          echo "PAGES_INDEX_PATH=${flatBranchName}" >> $GITHUB_ENV
+          echo "${flatBranchName}"
 
       - name: Release Charts
         uses: mguptahub/chart-releaser-action@v1.6.2
@@ -107,7 +108,7 @@ jobs:
           skip_existing: true
           mark_as_latest: ${{ env.MARK_AS_LATEST }}
           prerelease: ${{ env.MARK_AS_PRERELASE }}
-          page_index_path: ${{ env.PAGE_INDEX_PATH }}
+          pages_index_path: ${{ env.PAGES_INDEX_PATH }}
         env:
           CR_TOKEN: ${{ env.CR_TOKEN }}
           CR_KEY: ${{ env.GPG_KEY_NAME }}
