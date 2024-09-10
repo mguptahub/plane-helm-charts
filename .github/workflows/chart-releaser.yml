@@ -109,6 +109,7 @@ jobs:
           mark_as_latest: ${{ env.MARK_AS_LATEST }}
           prerelease: ${{ env.MARK_AS_PRERELASE }}
           pages_index_path: ${{ env.PAGES_INDEX_PATH }}
+          packages_with_index: true
         env:
           CR_TOKEN: ${{ env.CR_TOKEN }}
           CR_KEY: ${{ env.GPG_KEY_NAME }}
